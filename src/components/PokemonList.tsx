@@ -11,16 +11,20 @@ const PokemonList: React.FC = () => {
   const { pokemons, loading, error } = useSelector((state: RootState) => state.pokemon);
   const [showModal, setShowModal] = useState(false);
   const [selectedPokemon, setSelectedPokemon] = useState(null);
+  const [count,setCount]= useState(2);
 
   useEffect(() => {
-    dispatch(fetchPokemonsRequest(2));
+    dispatch(fetchPokemonsRequest(20));
   }, [dispatch]);
 
   const openModal = (pokemon: any) => {
     setSelectedPokemon(pokemon);
     setShowModal(true);
   };
-
+  const handleLoadMore=()=>{
+    dispatch(fetchPokemonsRequest(20*count));
+    setCount(count+1)
+  }
   useEffect(() => {
     console.log('pokemons', pokemons);
   }, [pokemons]);
@@ -34,7 +38,7 @@ const PokemonList: React.FC = () => {
           </div>
         ))}
       </div>
-      <button onClick={() => dispatch(fetchPokemonsRequest(2))}>Load more</button>
+      <button onClick={handleLoadMore}>Load more</button>
       {loading && <div className="loading">Loading...</div>}
       {error && <div className="error">Error: {error}</div>}
       <PokemonDetails showModal={showModal} setShowModal={setShowModal} pokemon={selectedPokemon} />

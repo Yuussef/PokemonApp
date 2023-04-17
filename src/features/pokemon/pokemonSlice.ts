@@ -41,9 +41,9 @@ export const {
 
 export default pokemonSlice.reducer;
 
-const fetchPokemons = async (offset: number): Promise<any[]> => {
+const fetchPokemons = async (limit: number): Promise<any[]> => {
   const response: AxiosResponse = await axios.get(
-    `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=20`
+    `https://pokeapi.co/api/v2/pokemon?limit=${limit}`
   );
   return (response.data.results as any[]);
 };
