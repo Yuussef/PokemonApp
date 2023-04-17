@@ -1,10 +1,19 @@
+// src/types.ts
 export interface Pokemon {
-  //  id: number;
-    name: string;
-    url: string;
-    // Add more properties based on the data you'll use in your application
-   // sprites?: {
-  //    front_default: string;
-   // };
-    // ...
-  }
+  name: string;
+  url: string;
+  sprites: {
+    front_default?: string;
+  };
+  stats: {
+    stat: {
+      name: string;
+    };
+    base_stat: number;
+  }[];
+  abilities: {
+    ability: {
+      name: string;
+    };
+  }[];
+}
