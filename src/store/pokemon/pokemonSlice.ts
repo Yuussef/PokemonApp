@@ -1,7 +1,8 @@
-// pokemonSlice.ts
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { call, put, takeEvery } from 'redux-saga/effects';
-import axios, { AxiosResponse } from 'axios';
+
+import axios,{ AxiosResponse } from "axios";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { call, put, takeEvery } from "redux-saga/effects";
+
 
 interface PokemonState {
   loading: boolean;

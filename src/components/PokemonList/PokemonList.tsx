@@ -1,9 +1,9 @@
-// src/components/PokemonList.tsx
+
 import React, { useEffect, useState, useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from '../app/store';
-import { fetchPokemonsRequest } from '../features/pokemon/pokemonSlice';
-import PokemonDetails from './PokemonDetails';
+import { RootState } from '../../store/store';
+import { fetchPokemonsRequest } from '../../store/pokemon/pokemonSlice';
+import PokemonDetails from '../PokemonDetails/PokemonDetails';
 import './PokemonList.css';
 
 const PokemonList: React.FC = () => {

@@ -1,8 +1,8 @@
- // src/app/store.ts
+
 import { configureStore } from '@reduxjs/toolkit';
 import createSagaMiddleware from 'redux-saga';
-import pokemonReducer from '../features/pokemon/pokemonSlice';
-import { watchFetchPokemonsSaga } from '../features/pokemon/pokemonSlice';
+import pokemonReducer from './pokemon/pokemonSlice';
+import { watchFetchPokemonsSaga } from './pokemon/pokemonSlice';
 
 const sagaMiddleware = createSagaMiddleware();
 

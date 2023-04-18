@@ -1,14 +1,14 @@
-// src/components/PokemonDetails.tsx
+
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Modal from 'react-modal';
-import { Pokemon } from '../types';
+import { Pokemon } from '../../types';
 import './PokemonDetails.css';
 
 interface Props {
   showModal: boolean;
   setShowModal: (show: boolean) => void;
-  pokemon: Pokemon | null; // Allow the pokemon prop to be null
+  pokemon: Pokemon | null; 
 }
 
 const PokemonDetails: React.FC<Props> = ({ showModal, setShowModal, pokemon }) => {

@@ -1,7 +1,7 @@
-// src/App.tsx
+
 import React from 'react';
 import './App.css';
-import PokemonList from './components/PokemonList';
+import PokemonList from './components/PokemonList/PokemonList';
 
 function App() {
   return (
